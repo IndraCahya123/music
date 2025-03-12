@@ -88,7 +88,9 @@
         if (isPlaying) {
             audioPlayer.pause();
             playBtn.textContent = "Play";
+            audioPlayer.loop = false;
         } else {
+            audioPlayer.loop = true;
             audioPlayer.play();
             playBtn.textContent = "Pause";
         }
@@ -101,6 +103,7 @@
         audioPlayer.src = selection;
 
         audioPlayer.load();
+        audioPlayer.loop = true;
         audioPlayer.play();
         playBtn.textContent = "Pause";
 
